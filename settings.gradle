@@ -1,3 +1,4 @@
+include ':domain'
 include ':dataRepository'
 include ':app'
 rootProject.name = "RandomList"
