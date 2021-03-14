@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolVersion
+
+    defaultConfig {
+        applicationId "com.satragni.randomlist"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation project(path: ':dataRepository')
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.4'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.4'
+
+    implementation rootProject.materialLib
+    implementation rootProject.kotlinStdlib
+    implementation rootProject.coreKTX
+    implementation rootProject.appCompact
+    implementation rootProject.constraintLayout
+    implementation rootProject.recyclerview
+    implementation rootProject.lifecycleExtensions
+    implementation rootProject.coroutine
+    implementation rootProject.viewModelKTX
+    implementation rootProject.coil
+
+    implementation rootProject.retrofit
+    implementation rootProject.retrofitGsonConverter
+    implementation rootProject.logginInterceptor
+
+    implementation rootProject.dagger
+    implementation rootProject.daggerAndroid
+    implementation rootProject.daggerSupport
+
+    kapt rootProject.daggerCompiler
+    kapt rootProject.daggerAndroidCompiler
+
+    implementation rootProject.roomLib
+    kapt rootProject.roomAnotation
+
+    testImplementation rootProject.junit
+    androidTestImplementation rootProject.extJunit
+    androidTestImplementation rootProject.espressoCore
+    testImplementation rootProject.mockitoKotlin
+    testImplementation rootProject.coroutinesTesting
+}
