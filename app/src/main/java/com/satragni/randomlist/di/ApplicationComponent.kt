@@ -25,6 +25,8 @@ import javax.inject.Singleton
         UseCaseModule::class,
         SearchApiModule::class,
         ActivitiesModule::class,
+        FragmentsModule::class,
+        ViewModelFactoryModule::class
     ]
 )
 interface ApplicationComponent : AndroidInjector<RandomListingApplication> {
