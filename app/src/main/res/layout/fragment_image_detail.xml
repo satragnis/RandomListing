@@ -27,12 +27,13 @@
 
         <ImageView
             android:id="@+id/detailImageView"
+            android:layout_marginTop="@dimen/dime_eight"
             android:layout_width="@dimen/dime_zero"
             android:layout_height="@dimen/dime_zero"
             android:adjustViewBounds="true"
             android:padding="@dimen/dime_one"
             app:imageUrl="@{viewModel.imageUrl}"
-            app:layout_constraintDimensionRatio="h,9:4"
+            app:layout_constraintDimensionRatio="h,9:5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbarDetail"
@@ -45,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dime_four"
             android:layout_marginTop="@dimen/dime_eight"
-            android:layout_marginEnd="@dimen/dime_four"
+            android:autofillHints=""
             android:hint="@string/enter_comment"
             android:inputType="textMultiLine"
             android:maxLines="4"
@@ -54,10 +55,9 @@
             android:paddingTop="@dimen/dime_four"
             android:paddingEnd="@dimen/dime_fourty_four"
             android:paddingBottom="@dimen/dime_four"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/postCommentButton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detailImageView"
-            android:autofillHints="" />
+            app:layout_constraintTop_toBottomOf="@+id/detailImageView" />
 
         <ImageButton
             android:id="@+id/postCommentButton"
@@ -67,9 +67,22 @@
             android:background="@android:color/transparent"
             android:src="@android:drawable/ic_menu_send"
             app:layout_constraintBottom_toBottomOf="@+id/commentEditText"
-            app:layout_constraintEnd_toEndOf="@+id/commentEditText"
+            app:layout_constraintEnd_toStartOf="@+id/shareImage"
             app:layout_constraintTop_toTopOf="@+id/commentEditText"
             tools:ignore="contentDescription" />
+
+        <ImageButton
+            android:id="@+id/shareImage"
+            android:layout_width="@dimen/dime_fourty_four"
+            android:layout_height="@dimen/dime_fourty_four"
+            android:layout_marginEnd="@dimen/dime_four"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_menu_share"
+            app:layout_constraintBottom_toBottomOf="@+id/postCommentButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/postCommentButton"
+            tools:ignore="contentDescription" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/commentsRecyclerView"

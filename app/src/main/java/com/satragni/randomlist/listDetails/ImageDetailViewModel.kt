@@ -65,6 +65,17 @@ class ImageDetailViewModel @Inject constructor(
         }
     }
 
+    fun shareImage() {
+        viewModelScope.launch() {
+          withContext(Dispatchers.IO) {
+
+            }
+        }
+    }
+
+
+
+
     fun setImageData(imageId: String?, imageUrl: String?) {
         this.imageUrl.set(imageUrl)
         this.mImageId = imageId ?: ""

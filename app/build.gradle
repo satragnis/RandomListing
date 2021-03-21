@@ -59,6 +59,10 @@ dependencies {
     implementation rootProject.coroutine
     implementation rootProject.viewModelKTX
     implementation rootProject.coil
+    implementation rootProject.lottie
+    implementation rootProject.glide
+    implementation rootProject.glideAnnotation
+    implementation rootProject.dexter
 
     implementation rootProject.retrofit
     implementation rootProject.retrofitGsonConverter
