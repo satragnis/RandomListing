@@ -2,7 +2,7 @@
 ## App Architecture
 
 
-This sample app used MVVM with Clean architecture
+This is a sample app using MVVM with Clean architecture
 
 
 
